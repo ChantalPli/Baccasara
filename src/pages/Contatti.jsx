@@ -197,7 +197,7 @@ function Contatti() {
             <IconContainer>📱</IconContainer>
             <InfoContent>
               <InfoTitle>Telefono</InfoTitle>
-              <InfoText>+39 XXX XXX XXXX</InfoText>
+              <InfoText>+39 3287435384</InfoText>
             </InfoContent>
           </InfoItem>
 

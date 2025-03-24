@@ -157,18 +157,7 @@ function Proprieta() {
       </DescriptionSection>
 
       <ContentSection>
-        <Card>
-          <CardTitle>Superficie</CardTitle>
-          <CardContent>
-            2702 mq totali
-            <br />
-            Comprende officina esistente e corte
-            <br />
-            Categoria catastale: F/1
-            <br />
-            Consistenza: 181 m²
-          </CardContent>
-        </Card>
+      
 
         <Card>
           <CardTitle>Destinazione d'uso</CardTitle>
@@ -190,9 +179,26 @@ function Proprieta() {
         <Card>
           <CardTitle>Zona</CardTitle>
           <CardContent>
-            Zona Industriale di Tortolì (NU)
+            Zona Industriale di Tortolì (NU).
+            <br />
+            La zona è caratterizzata dalla presenza di altre attività commerciali e industriali affermate, creando un polo attrattivo per potenziali clienti.
           </CardContent>
         </Card>
+
+        <Card>
+          <CardTitle>Superficie</CardTitle>
+          <CardContent>
+            2702 mq totali
+            <br />
+            Comprende officina esistente e corte
+            <br />
+            Categoria catastale: F/1
+            <br />
+            Consistenza: 181 m²
+          </CardContent>
+        </Card>
+
+       
       </ContentSection>
 
       <AdditionalSection>
