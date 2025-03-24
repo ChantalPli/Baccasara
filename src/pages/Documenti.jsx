@@ -167,6 +167,12 @@ const PDFViewer = styled.div`
     border: none;
     object-fit: contain;
   }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
 `;
 
 const ZoomControls = styled.div`
@@ -440,8 +446,8 @@ function Documenti() {
                   </RotateButton>
                 </ZoomControls>
                 <PDFViewer>
-                  <embed
-                    src={`${selectedSubDocument ? selectedSubDocument.file : selectedDocument.file}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+                  <iframe
+                    src={`${selectedSubDocument ? selectedSubDocument.file : selectedDocument.file}#toolbar=0&navpanes=0&scrollbar=0&view=FitH&print=0&download=0`}
                     type="application/pdf"
                     title={selectedSubDocument ? selectedSubDocument.title : selectedDocument.title}
                     style={{ 
@@ -451,6 +457,8 @@ function Documenti() {
                       width: isRotated ? '100vh' : '100%',
                       height: isRotated ? '100vw' : '100%'
                     }}
+                    frameBorder="0"
+                    onContextMenu={(e) => e.preventDefault()}
                   />
                 </PDFViewer>
               </>
