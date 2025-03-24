@@ -1,5 +1,8 @@
 import styled from '@emotion/styled';
-import photo2 from '../assets/photo2.jpg';
+import photo10 from '../assets/photo10.png';
+import photo3 from '../assets/photo3.jpg';
+import photo8 from '../assets/photo8.jpg';
+import Carousel from '../components/Carousel';
 
 const PageContainer = styled.div`
   padding: 2rem;
@@ -8,16 +11,6 @@ const PageContainer = styled.div`
 const HeroSection = styled.div`
   text-align: center;
   margin-bottom: 3rem;
-`;
-
-const HeroImage = styled.img`
-  width: 100%;
-  max-width: 1200px;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin: 2rem 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
 const Title = styled.h1`
@@ -30,7 +23,7 @@ const Subtitle = styled.p`
   font-size: 1.2rem;
   color: #666;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
 `;
 
 const DescriptionSection = styled.div`
@@ -134,6 +127,12 @@ const SectionText = styled.p`
 `;
 
 function Proprieta() {
+  const carouselImages = [
+    { src: photo10, alt: 'Vista principale del terreno' },
+    { src: photo3, alt: 'Vista del terreno' },
+    { src: photo8, alt: 'Vista del terreno' }
+  ];
+
   return (
     <PageContainer>
       <HeroSection>
@@ -141,7 +140,7 @@ function Proprieta() {
         <Subtitle>
           Un'opportunità unica per investire in un terreno commerciale strategico
         </Subtitle>
-        <HeroImage src={photo2} alt="Terreno Commerciale Baccasara" />
+        <Carousel images={carouselImages} />
       </HeroSection>
 
       <DescriptionSection>
