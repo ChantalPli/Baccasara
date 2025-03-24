@@ -173,11 +173,17 @@ function Proprieta() {
         <Card>
           <CardTitle>Destinazione d'uso</CardTitle>
           <CardContent>
-            Commerciale / Industriale
+          Commerciale / Industriale conforme al Piano Regolatore Generale Industriale. Adattabile a molteplici attività:
             <br />
-            Conforme al Piano Regolatore Generale Industriale
+            Industriale: officine, attività produttive, logistica, magazzini
             <br />
-            Ideale per: officine, magazzini, attività produttive, logistica
+            Commerciale: negozi, showroom, supermercati, centri commerciali
+            <br />
+            Servizi: uffici, studi professionali, strutture ricettive            
+            <br />
+            Grande distribuzione: punti vendita al dettaglio e all'ingrosso
+            <br />
+            La posizione strategica e l'ampia metratura offrono infinite possibilità di sviluppo per la vostra attività.
           </CardContent>
         </Card>
 

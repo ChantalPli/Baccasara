@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from '@emotion/styled';
 
 const PageContainer = styled.div`
@@ -138,7 +139,51 @@ const FormTitle = styled.h2`
   text-align: center;
 `;
 
+const SuccessMessage = styled.div`
+  color: #28a745;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #d4edda;
+  border-radius: 8px;
+`;
+
+const ErrorMessage = styled.div`
+  color: #dc3545;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #f8d7da;
+  border-radius: 8px;
+`;
+
 function Contatti() {
+  const [status, setStatus] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    try {
+      const response = await fetch('https://formspree.io/f/xanejpda', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          Accept: 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        form.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
+  };
+
   return (
     <PageContainer>
       <Title>Contatti</Title>
@@ -187,14 +232,20 @@ function Contatti() {
           </InfoItem> */}
         </ContactInfo>
 
-        <ContactForm>
-          {/* <FormTitle>Contattaci</FormTitle> */}
+        <ContactForm 
+          onSubmit={handleSubmit}
+          action="https://formspree.io/f/xanejpda"
+          method="POST"
+        >
+          <FormTitle>Contattaci</FormTitle>
           <FormGroup>
             <Label htmlFor="name">Nome e Cognome</Label>
             <Input 
               type="text" 
-              id="name" 
+              id="name"
+              name="name"
               placeholder="Inserisci il tuo nome completo"
+              required
             />
           </FormGroup>
 
@@ -202,8 +253,10 @@ function Contatti() {
             <Label htmlFor="email">Email</Label>
             <Input 
               type="email" 
-              id="email" 
+              id="email"
+              name="email"
               placeholder="La tua email"
+              required
             />
           </FormGroup>
 
@@ -211,7 +264,8 @@ function Contatti() {
             <Label htmlFor="phone">Telefono</Label>
             <Input 
               type="tel" 
-              id="phone" 
+              id="phone"
+              name="phone"
               placeholder="Il tuo numero di telefono"
             />
           </FormGroup>
@@ -219,12 +273,28 @@ function Contatti() {
           <FormGroup>
             <Label htmlFor="message">Messaggio</Label>
             <TextArea 
-              id="message" 
+              id="message"
+              name="message"
               placeholder="Scrivi il tuo messaggio..."
+              required
             />
           </FormGroup>
 
-          <Button type="submit">Invia Messaggio</Button>
+          <Button type="submit">
+            Invia Messaggio
+          </Button>
+
+          {status === 'success' && (
+            <SuccessMessage>
+              Grazie per averci contattato! Ti risponderemo al più presto.
+            </SuccessMessage>
+          )}
+          
+          {status === 'error' && (
+            <ErrorMessage>
+              Si è verificato un errore. Per favore riprova più tardi.
+            </ErrorMessage>
+          )}
         </ContactForm>
       </ContentWrapper>
     </PageContainer>

@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
-import photo1 from '../assets/photo1.JPG';
+// import photo1 from '../assets/photo1.JPG';
 import photo2 from '../assets/photo2.jpg';
-import photo3 from '../assets/photo3.jpg';
+// import photo3 from '../assets/photo3.jpg';
 import photo4 from '../assets/photo4.jpg';
 import photo5 from '../assets/photo5.jpg';
 import photo6 from '../assets/photo6.jpg';
@@ -112,9 +112,9 @@ function Galleria() {
   const [selectedImage, setSelectedImage] = useState(null);
   
   const images = [
-    { src: photo1, alt: 'Vista del terreno 1' },
+    // { src: photo1, alt: 'Vista del terreno 1' },
     { src: photo2, alt: 'Vista del terreno 2' },
-    { src: photo3, alt: 'Vista del terreno 3' },
+    // { src: photo3, alt: 'Vista del terreno 3' },
     { src: photo4, alt: 'Vista del terreno 4' },
     { src: photo5, alt: 'Vista del terreno 5' },
     { src: photo6, alt: 'Vista del terreno 6' },
