@@ -1,45 +1,82 @@
 import styled from '@emotion/styled';
 
 const PageContainer = styled.div`
-  padding: 2rem;
+  padding: 1rem;
+  max-width: 100%;
+  overflow-x: hidden;
+  
+  @media (min-width: 768px) {
+    padding: 2rem;
+  }
 `;
 
 const Title = styled.h1`
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   color: #2B5592;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   text-align: center;
+  
+  @media (min-width: 768px) {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
 `;
 
 const ContentSection = styled.div`
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 0.5rem;
+  
+  @media (min-width: 768px) {
+    padding: 0 1rem;
+  }
 `;
 
 const FeatureList = styled.ul`
   list-style: none;
   padding: 0;
+  margin: 0;
 `;
 
 const FeatureItem = styled.li`
   background: white;
-  padding: 1.5rem;
+  padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  gap: 0.5rem;
+  
+  @media (min-width: 640px) {
+    flex-direction: row;
+    align-items: baseline;
+    padding: 1.5rem;
+  }
 `;
 
 const FeatureLabel = styled.span`
   font-weight: bold;
   color: #2B5592;
-  min-width: 200px;
-  margin-right: 1rem;
+  font-size: 1rem;
+  
+  @media (min-width: 640px) {
+    min-width: 200px;
+    margin-right: 1rem;
+    flex-shrink: 0;
+  }
 `;
 
 const FeatureValue = styled.span`
   color: #333;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+  
+  @media (min-width: 640px) {
+    font-size: 1rem;
+  }
 `;
 
 const Divider = styled.hr`
