@@ -4,7 +4,9 @@ import styled from '@emotion/styled';
 const CarouselContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 400px;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 500px;
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -16,12 +18,17 @@ const CarouselSlide = styled.div`
   height: 100%;
   opacity: ${props => (props.active ? 1 : 0)};
   transition: opacity 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const CarouselImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  background-color: #f5f5f5;
+  display: block;
 `;
 
 const CarouselButton = styled.button`

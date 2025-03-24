@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import photo10 from '../assets/photo10.png';
-import photo3 from '../assets/photo3.jpg';
 import photo8 from '../assets/photo8.jpg';
+import photo9 from '../assets/photo9.jpg';
 import Carousel from '../components/Carousel';
 
 const PageContainer = styled.div`
@@ -129,8 +129,8 @@ const SectionText = styled.p`
 function Proprieta() {
   const carouselImages = [
     { src: photo10, alt: 'Vista principale del terreno' },
-    { src: photo3, alt: 'Vista del terreno' },
-    { src: photo8, alt: 'Vista del terreno' }
+    { src: photo8, alt: 'Vista del terreno' },
+    { src: photo9, alt: 'Vista del terreno' }
   ];
 
   return (
